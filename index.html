@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CB_Filter</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="transport_wrapper">
+        <div class="transport">
+          <button id="startButton" class="transBtn" type="button" name="button">START</button>
+          <button id="stopButton" class="transBtn" type="button" name="button">STOP</button>
+        </div>
+      </div>
+      <div class="plug flexible center middle">
+        <div class="plate flexible middle center">
+          <div class="plate_face flexible middle center">
+            <div class="filter_wrapper flexible middle start column">
+              <div class="top_container flexible middle center">
+                <div class="curve_wrapper flexible middle start">
+                  <canvas id="canvas" class="curve" width="400" height="250"></canvas>
+                </div>
+              </div>
+
+              <div class="bottom_container">
+                <div class="controls_wrapper flexible column start middle">
+                  <div class="row flexible middle center switch">
+                    <div class="knob flexible center middle">
+                      <webaudio-knob src="./images/hsw.png" id="filterSelector" class="control" sensitivity="0.3" enable="1"  width="256" height="64" sprites="4" value="0"  max="4"></webaudio-knob>
+                    </div>
+                  </div>
+                  <div class="row flexible middle center">
+                    <div class="knob half flexible center middle">
+                      <webaudio-knob src="./images/vint.png" id="cutoff" class="control" sensitivity="0.09" enable="1" diameter="185" sprites="100" value="50" min="1" max="100.01" step="0.1"></webaudio-knob>
+                    </div>
+                    <div class="knob half flexible center middle">
+                      <webaudio-knob src="./images/vint.png" id="res" class="control" sensitivity="0.1" enable="1" diameter="185" sprites="100" value="0.1" min="0.1" max="10" step="0.01"></webaudio-knob>
+                    </div>
+                  </div>
+
+                  <div class="row flexible middle center">
+                    <div class="knob half flexible center middle ">
+                      <webaudio-knob src="./images/vint.png" id="warmth" class="control" sensitivity="0.1" enable="1" diameter="185" sprites="100" value="0.5" min="0.1" max="0.9" step="0.01"></webaudio-knob>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <script src="./tuna-min.js"></script>
+    <script src="./cb_webaudio-controls.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+<!-- <div class="canvasContainer">
+  <canvas id="canvas" width="400" height="300"></canvas>
+</div>
+<div class="controls">
+<webaudio-knob src="./images/ridge_1.png" id="response" class="control" sensitivity="0.1" enable="1" diameter="110" sprites="100" value="0.1" min="0.1" max="10" step="0.01></webaudio-knob>
+<webaudio-knob src="./images/ridge_1.png" id="cutoff" class="control" sensitivity="0.1" enable="1" diameter="110" sprites="100" value="50" min="1" max="100"></webaudio-knob>
+
+
+  <input type="range" id="response" name="res" value="0" min="0.1" max="10" step="0.01">
+  <input type="range" id="cutoff" name="res" value="50" min="1" max="100" >
+</div> -->
